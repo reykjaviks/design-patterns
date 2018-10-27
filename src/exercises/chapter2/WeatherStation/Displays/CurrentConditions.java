@@ -5,7 +5,7 @@ import exercises.chapter2.WeatherStation.Observer;
 
 public class CurrentConditions implements Observer, DisplayElement {
     @Override
-    public void observer() {
+    public void update() {
 
     }
 
