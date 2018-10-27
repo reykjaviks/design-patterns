@@ -1,34 +1,47 @@
 package exercises.chapter2.WeatherStation;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 public class WeatherData implements Subject {
-    // instance variable declarations
+    private ArrayList<Observer> observers;
+    private float temperature;
+    private float humidity;
+    private float pressure;
 
-    @Override
-    public void registerObserver() {
-
+    public WeatherData() {
+        this.observers = new ArrayList<>();
+        Collections.addAll(this.observers); // Too heavy?
     }
 
     @Override
-    public void removeObserver() {
+    public void registerObserver(Observer o) {
+        this.observers.add(o);
+        Collections.addAll(this.observers, o);
+    }
 
+    @Override
+    public void removeObserver(Observer o) {
+        int i = observers.indexOf(o);
+        if (i >= 0) {
+            this.observers.remove(i);
+        }
     }
 
     @Override
     public void notifyObservers() {
-
+        this.observers.forEach(observer -> observer.update(this.temperature, this.humidity, this.pressure));
     }
 
-    /*
-    public void measurementsChanged() {
-        float temp = getTemperature();
-        float humidity = getHumidity();
-        float pressure = getPressure();
-
-        currentConditionsDisplay.update(temp, humidity, pressure);
-        statisticsDisplay.update(temp, humidity, pressure);
-        forecastDisplay.update(temp, humidity, pressure);
+    public void measurementsChanged(float temperature, float humidity, float pressure) {
+        this.notifyObservers();
     }
-    */
 
-    // other weather data methods
+    public void setMeasurements(float temperature, float humidity, float pressure) {
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        this.measurementsChanged();
+    }
+
 }
