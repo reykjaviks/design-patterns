@@ -1,7 +1,7 @@
 package exercises.chapter2.WeatherStation;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Collections;
 
 public class WeatherData implements Subject {
     private ArrayList<Observer> observers;
