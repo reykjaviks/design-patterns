@@ -33,7 +33,7 @@ public class WeatherData implements Subject {
         this.observers.forEach(observer -> observer.update(this.temperature, this.humidity, this.pressure));
     }
 
-    public void measurementsChanged(float temperature, float humidity, float pressure) {
+    public void measurementsChanged() {
         this.notifyObservers();
     }
 
