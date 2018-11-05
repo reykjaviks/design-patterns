@@ -5,7 +5,7 @@ import exercises.chapter2.WeatherStation.Observer;
 
 public class StatisticsDisplay implements Observer, DisplayElement {
     @Override
-    public void update() {
+    public void update(float temp, float humidity, float pressure) {
 
     }
 
@@ -13,5 +13,4 @@ public class StatisticsDisplay implements Observer, DisplayElement {
     public void display() {
 
     }
-
 }
