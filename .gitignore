@@ -6,6 +6,9 @@ out/
 # Gradle
 .idea/**/gradle.xml
 .idea/**/libraries
+gradle/
+build/
+.gradle/
 
 # File-based project format
 *.iws
