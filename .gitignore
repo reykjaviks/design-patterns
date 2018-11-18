@@ -1,6 +1,7 @@
 # IntelliJ specific
 .idea
 out/
+*.iml
 
 # Gradle
 .idea/**/gradle.xml
