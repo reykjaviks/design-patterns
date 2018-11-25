@@ -13,17 +13,17 @@ public class Author implements Subject {
     }
 
     @Override
-    public void registerFollower(Observer o) {
+    public void registerObserver(Observer o) {
         this.observerList.add(o);
     }
 
     @Override
-    public void removeFollower(Observer o) {
+    public void removeObserver(Observer o) {
         this.observerList.remove(o);
     }
 
     @Override
-    public void notifyFollowers() {
+    public void notifyObservers() {
         for (Observer o : this.observerList) {
             o.update();
         }

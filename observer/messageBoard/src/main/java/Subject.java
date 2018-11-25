@@ -1,5 +1,5 @@
 public interface Subject {
-    public void registerFollower(Observer o);
-    public void removeFollower(Observer o);
-    public void notifyFollowers();
+    public void registerObserver(Observer o);
+    public void removeObserver(Observer o);
+    public void notifyObservers();
 }
