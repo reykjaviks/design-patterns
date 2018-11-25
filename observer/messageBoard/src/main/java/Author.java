@@ -3,11 +3,11 @@ public class Author implements Subject {
     private Message feed;
 
     @Override
-    public void registerFollower(Follower f) {
+    public void registerFollower(Observer o) {
     }
 
     @Override
-    public void removeFollower(Follower f) {
+    public void removeFollower(Observer o) {
     }
 
     @Override
