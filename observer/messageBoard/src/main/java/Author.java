@@ -3,8 +3,8 @@ import java.util.List;
 
 public class Author implements Subject {
     private String name;
-    private List messageList;
-    private List observerList;
+    private ArrayList<Message> messageList;
+    private ArrayList<Observer> observerList;
 
     public  Author(String name) {
         this.name = name;
