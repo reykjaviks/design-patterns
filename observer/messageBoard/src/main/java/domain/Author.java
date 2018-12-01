@@ -1,32 +1,36 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Author implements Subject {
     private String name;
-    private ArrayList<Message> messages;
-    private ArrayList<Observer> observers;
+    private String post;
+    private List<Observer> observers;
 
     public Author(String name) {
         this.name = name;
-        messages = new ArrayList<Message>();
-        observers = new ArrayList<Observer>();
+        this.observers = new ArrayList<>();
+    }
+
+    public void write(String message) {
+        this.post = message;
     }
 
     @Override
     public void registerObserver(Observer o) {
-        this.observers.add(o);
+        observers.add(o);
     }
 
     @Override
     public void removeObserver(Observer o) {
-        this.observers.remove(o);
+        observers.remove(o);
     }
 
     @Override
     public void notifyObservers() {
         for (Observer o : this.observers) {
-            o.update();
+            o.update(this.post);
         }
     }
 }
