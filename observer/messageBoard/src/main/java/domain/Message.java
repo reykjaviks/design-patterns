@@ -1,3 +1,5 @@
+package domain;
+
 public class Message {
     private String title;
     private Author author;
