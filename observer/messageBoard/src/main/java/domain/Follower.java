@@ -16,6 +16,12 @@ public class Follower implements Observer {
         return this.feed;
     }
 
+    public void printFeed() {
+        for (String message : feed) {
+            System.out.println(message);
+        }
+    }
+
     @Override
     public void update(String post) {
         feed.add(post);

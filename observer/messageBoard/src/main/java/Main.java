@@ -17,5 +17,8 @@ public class Main {
         eeCummings.write("One's not half of two; two are halves of one.");
         eeCummings.notifyObservers();
 
+        elizaditty.printFeed();
+        kocu.printFeed();
+        sindex.printFeed();
     }
 }
