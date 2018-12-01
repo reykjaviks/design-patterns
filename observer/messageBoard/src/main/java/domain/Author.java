@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Author implements Subject {
     private String name;
-    private String post;
+    private String message;
     private List<Observer> observers;
 
     public Author(String name) {
@@ -14,7 +14,7 @@ public class Author implements Subject {
     }
 
     public void write(String message) {
-        this.post = message;
+        this.message = message;
     }
 
     @Override
@@ -30,7 +30,7 @@ public class Author implements Subject {
     @Override
     public void notifyObservers() {
         for (Observer o : this.observers) {
-            o.update(this.post);
+            o.update(this.message);
         }
     }
 }
