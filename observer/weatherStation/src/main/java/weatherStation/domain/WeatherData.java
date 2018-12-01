@@ -13,36 +13,32 @@ public class WeatherData implements Subject {
         this.observers = new ArrayList<>();
     }
 
-    @Override
-    public void registerObserver(Observer observer) {
-        this.observers.add(observer);
-    }
-
-    @Override
-    public void removeObserver(Observer observer) {
-        int indexOfObserver = observers.indexOf(observer);
-        if (indexOfObserver >= 0) {
-            this.observers.remove(indexOfObserver);
-        }
-    }
-
-    @Override
-    public void notifyObservers() {
-        for (Observer observer : this.observers) {
-            observer.update(this.temperature, this.humidity, this.pressure);
-        }
-    }
-
-    public void measurementsChanged() {
-        this.notifyObservers();
-    }
-
     public void setMeasurements(float temperature, float humidity, float pressure) {
         this.temperature = temperature;
         this.humidity = humidity;
         this.pressure = pressure;
+        measurementsChanged();
+    }
 
-        this.measurementsChanged();
+    @Override
+    public void registerObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    public void measurementsChanged() {
+        notifyObservers();
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.update(temperature, humidity, pressure);
+        }
     }
 
 }
