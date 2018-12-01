@@ -12,19 +12,15 @@ public class Follower implements Observer {
         this.feed = new ArrayList<>();
     }
 
-    public List<String> getFeed() {
-        return this.feed;
+    @Override
+    public void update(String post) {
+        feed.add(post);
     }
 
     public void printFeed() {
         for (String message : feed) {
             System.out.println(message);
         }
-    }
-
-    @Override
-    public void update(String post) {
-        feed.add(post);
     }
 
 }
