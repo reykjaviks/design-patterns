@@ -1,7 +1,7 @@
-package exercises.chapter2.WeatherStation.Displays;
+package weatherStation.displays;
 
-import exercises.chapter2.WeatherStation.DisplayElement;
-import exercises.chapter2.WeatherStation.Observer;
+import weatherStation.domain.DisplayElement;
+import weatherStation.domain.Observer;
 
 public class CurrentConditions implements Observer, DisplayElement {
     @Override

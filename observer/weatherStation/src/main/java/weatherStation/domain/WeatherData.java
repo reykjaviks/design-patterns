@@ -1,4 +1,4 @@
-package exercises.chapter2.WeatherStation;
+package weatherStation.domain;
 
 import java.util.ArrayList;
 import java.util.List;
