@@ -1,7 +1,6 @@
 package weatherStation.displays;
 
-import weatherStation.domain.DisplayElement;
-import weatherStation.domain.Observer;
+import weatherStation.domain.*;
 
 public class ForecastDisplay implements Observer, DisplayElement {
 
